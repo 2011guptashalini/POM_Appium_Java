@@ -1,35 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results retried="1" ignored="1" total="3" passed="0" failed="1" skipped="0">
+<testng-results retried="3" ignored="3" total="12" passed="5" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-12-06T01:20:08 IST" name="Default suite" finished-at="2023-12-06T01:21:13 IST" duration-ms="65181">
+  <suite started-at="2023-12-06T10:53:04 IST" name="Suite" finished-at="2023-12-06T10:58:10 IST" duration-ms="306395">
     <groups>
       <group name="Regression">
-        <method signature="EventPageTest.eventPage_addEventTest()[pri:0, instance:com.bschool.chats.bschoolAndroid.tests.EventPageTest@5af3afd9]" name="eventPage_addEventTest" class="com.bschool.chats.bschoolAndroid.tests.EventPageTest"/>
+        <method signature="EventPageTest.eventPage_addEventTest()[pri:0, instance:com.bschool.chats.bschoolAndroid.tests.EventPageTest@5143c662]" name="eventPage_addEventTest" class="com.bschool.chats.bschoolAndroid.tests.EventPageTest"/>
+        <method signature="EventPageTest.eventPage_displayedTest()[pri:0, instance:com.bschool.chats.bschoolAndroid.tests.EventPageTest@5143c662]" name="eventPage_displayedTest" class="com.bschool.chats.bschoolAndroid.tests.EventPageTest"/>
+        <method signature="EventPageTest.eventPage_editEvent()[pri:0, instance:com.bschool.chats.bschoolAndroid.tests.EventPageTest@5143c662]" name="eventPage_editEvent" class="com.bschool.chats.bschoolAndroid.tests.EventPageTest"/>
+        <method signature="EventPageTest.eventPage_readComments()[pri:0, instance:com.bschool.chats.bschoolAndroid.tests.EventPageTest@5143c662]" name="eventPage_readComments" class="com.bschool.chats.bschoolAndroid.tests.EventPageTest"/>
+        <method signature="EventPageTest.eventPage_readDetails()[pri:0, instance:com.bschool.chats.bschoolAndroid.tests.EventPageTest@5143c662]" name="eventPage_readDetails" class="com.bschool.chats.bschoolAndroid.tests.EventPageTest"/>
+        <method signature="EventPageTest.eventPage_writeComments()[pri:0, instance:com.bschool.chats.bschoolAndroid.tests.EventPageTest@5143c662]" name="eventPage_writeComments" class="com.bschool.chats.bschoolAndroid.tests.EventPageTest"/>
       </group> <!-- Regression -->
       <group name="Smoke">
-        <method signature="EventPageTest.eventPage_addEventTest()[pri:0, instance:com.bschool.chats.bschoolAndroid.tests.EventPageTest@5af3afd9]" name="eventPage_addEventTest" class="com.bschool.chats.bschoolAndroid.tests.EventPageTest"/>
+        <method signature="EventPageTest.eventPage_addEventTest()[pri:0, instance:com.bschool.chats.bschoolAndroid.tests.EventPageTest@5143c662]" name="eventPage_addEventTest" class="com.bschool.chats.bschoolAndroid.tests.EventPageTest"/>
+        <method signature="EventPageTest.eventPage_displayedTest()[pri:0, instance:com.bschool.chats.bschoolAndroid.tests.EventPageTest@5143c662]" name="eventPage_displayedTest" class="com.bschool.chats.bschoolAndroid.tests.EventPageTest"/>
       </group> <!-- Smoke -->
     </groups>
-    <test started-at="2023-12-06T01:20:08 IST" name="Default test" finished-at="2023-12-06T01:21:13 IST" duration-ms="65181">
+    <test started-at="2023-12-06T10:53:04 IST" name="Test" finished-at="2023-12-06T10:58:10 IST" duration-ms="306395">
       <class name="com.bschool.chats.bschoolAndroid.tests.EventPageTest">
-        <test-method is-config="true" signature="logintoApp()[pri:0, instance:com.bschool.chats.bschoolAndroid.tests.EventPageTest@5af3afd9]" started-at="2023-12-06T01:20:08 IST" name="logintoApp" finished-at="2023-12-06T01:20:20 IST" duration-ms="11882" status="PASS">
+        <test-method is-config="true" signature="beforeRunningTest()[pri:0, instance:com.bschool.chats.bschoolAndroid.tests.EventPageTest@5143c662]" started-at="2023-12-06T10:53:04 IST" name="beforeRunningTest" finished-at="2023-12-06T10:53:04 IST" duration-ms="14" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeRunningTest -->
+        <test-method is-config="true" signature="logintoApp()[pri:0, instance:com.bschool.chats.bschoolAndroid.tests.EventPageTest@5143c662]" started-at="2023-12-06T10:53:04 IST" name="logintoApp" finished-at="2023-12-06T10:53:15 IST" duration-ms="11309" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logintoApp -->
-        <test-method retried="true" signature="eventPage_addEventTest()[pri:0, instance:com.bschool.chats.bschoolAndroid.tests.EventPageTest@5af3afd9]" started-at="2023-12-06T01:20:20 IST" name="eventPage_addEventTest" finished-at="2023-12-06T01:20:59 IST" duration-ms="38726" status="SKIP">
-          <exception class="java.lang.AssertionError">
+        <test-method retried="true" signature="eventPage_addEventTest()[pri:0, instance:com.bschool.chats.bschoolAndroid.tests.EventPageTest@5143c662]" started-at="2023-12-06T10:53:15 IST" name="eventPage_addEventTest" finished-at="2023-12-06T10:53:29 IST" duration-ms="13918" status="SKIP">
+          <exception class="org.openqa.selenium.StaleElementReferenceException">
             <message>
-              <![CDATA[Event is now deleted. expected [false] but found [true]]]>
+              <![CDATA[The element 'By.xpath: //android.widget.ImageView[@resource-id="com.google.android.documentsui:id/icon_thumb"]' does not exist in DOM anymore
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: '4.15.0', revision: '1d14b5521b'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '14.1', java.version: '17.0.9'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [11645991-c1f0-405f-98ba-53b672a6e8f1, isElementDisplayed {id=00000000-0000-001d-ffff-ffff000001f3}]
+Capabilities {appium:app: /Users/shalinigupta/Desktop..., appium:appPackage: com.bschool.chats, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {app: /Users/shalinigupta/Desktop..., automationName: UiAutomator2, deviceName: Pixel 7 Pro API 30, platformName: ANDROID}, appium:deviceApiLevel: 30, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone_arm64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 560, appium:deviceScreenSize: 1440x3120, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 3.5, appium:platformVersion: 11, appium:statBarHeight: 84, appium:takesScreenshot: true, appium:viewportRect: {height: 2868, left: 0, top: 84, width: 1440}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Element: [[AndroidDriver:  on ANDROID (11645991-c1f0-405f-98ba-53b672a6e8f1)] -> xpath: //android.widget.ImageView[@resource-id="com.google.android.documentsui:id/icon_thumb"]]
+Session ID: 11645991-c1f0-405f-98ba-53b672a6e8f1]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Event is now deleted. expected [false] but found [true]
-at org.testng.Assert.fail(Assert.java:111)
-at org.testng.Assert.failNotEquals(Assert.java:1578)
-at org.testng.Assert.assertFalse(Assert.java:79)
-at com.bschool.chats.bschoolAndroid.tests.EventPageTest.eventPage_addEventTest(EventPageTest.java:54)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+              <![CDATA[org.openqa.selenium.StaleElementReferenceException: The element 'By.xpath: //android.widget.ImageView[@resource-id="com.google.android.documentsui:id/icon_thumb"]' does not exist in DOM anymore
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: '4.15.0', revision: '1d14b5521b'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '14.1', java.version: '17.0.9'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [11645991-c1f0-405f-98ba-53b672a6e8f1, isElementDisplayed {id=00000000-0000-001d-ffff-ffff000001f3}]
+Capabilities {appium:app: /Users/shalinigupta/Desktop..., appium:appPackage: com.bschool.chats, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {app: /Users/shalinigupta/Desktop..., automationName: UiAutomator2, deviceName: Pixel 7 Pro API 30, platformName: ANDROID}, appium:deviceApiLevel: 30, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone_arm64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 560, appium:deviceScreenSize: 1440x3120, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 3.5, appium:platformVersion: 11, appium:statBarHeight: 84, appium:takesScreenshot: true, appium:viewportRect: {height: 2868, left: 0, top: 84, width: 1440}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Element: [[AndroidDriver:  on ANDROID (11645991-c1f0-405f-98ba-53b672a6e8f1)] -> xpath: //android.widget.ImageView[@resource-id="com.google.android.documentsui:id/icon_thumb"]]
+Session ID: 11645991-c1f0-405f-98ba-53b672a6e8f1
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:238)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:607)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
+at org.openqa.selenium.remote.RemoteWebElement.isDisplayed(RemoteWebElement.java:283)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+at jdk.proxy2/jdk.proxy2.$Proxy16.isDisplayed(Unknown Source)
+at com.bschool.chats.bschoolAndroid.pageojects.EventPage.VerifyPhotoOptionsDisplayed(EventPage.java:430)
+at com.bschool.chats.bschoolAndroid.tests.EventPageTest.eventPage_addEventTest(EventPageTest.java:39)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
 at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
 at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
@@ -38,7 +83,7 @@ at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInv
 at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
 at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
 at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 at org.testng.TestRunner.privateRun(TestRunner.java:848)
 at org.testng.TestRunner.run(TestRunner.java:621)
 at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
@@ -56,38 +101,164 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- eventPage_addEventTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bschool.chats.bschoolAndroid.tests.EventPageTest@5af3afd9]" started-at="2023-12-06T01:20:59 IST" name="tearDown" finished-at="2023-12-06T01:20:59 IST" duration-ms="212" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bschool.chats.bschoolAndroid.tests.EventPageTest@5143c662]" started-at="2023-12-06T10:53:29 IST" name="tearDown" finished-at="2023-12-06T10:53:29 IST" duration-ms="222" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="logintoApp()[pri:0, instance:com.bschool.chats.bschoolAndroid.tests.EventPageTest@5af3afd9]" started-at="2023-12-06T01:20:59 IST" name="logintoApp" finished-at="2023-12-06T01:21:13 IST" duration-ms="14224" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        <test-method is-config="true" signature="logintoApp()[pri:0, instance:com.bschool.chats.bschoolAndroid.tests.EventPageTest@5143c662]" started-at="2023-12-06T10:53:29 IST" name="logintoApp" finished-at="2023-12-06T10:53:39 IST" duration-ms="9815" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logintoApp -->
+        <test-method signature="eventPage_addEventTest()[pri:0, instance:com.bschool.chats.bschoolAndroid.tests.EventPageTest@5143c662]" started-at="2023-12-06T10:53:39 IST" name="eventPage_addEventTest" finished-at="2023-12-06T10:54:10 IST" duration-ms="30950" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- eventPage_addEventTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bschool.chats.bschoolAndroid.tests.EventPageTest@5143c662]" started-at="2023-12-06T10:54:10 IST" name="tearDown" finished-at="2023-12-06T10:54:10 IST" duration-ms="250" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="logintoApp()[pri:0, instance:com.bschool.chats.bschoolAndroid.tests.EventPageTest@5143c662]" started-at="2023-12-06T10:54:10 IST" name="logintoApp" finished-at="2023-12-06T10:54:20 IST" duration-ms="9667" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logintoApp -->
+        <test-method signature="eventPage_displayedTest()[pri:0, instance:com.bschool.chats.bschoolAndroid.tests.EventPageTest@5143c662]" started-at="2023-12-06T10:54:20 IST" name="eventPage_displayedTest" finished-at="2023-12-06T10:54:27 IST" duration-ms="6863" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- eventPage_displayedTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bschool.chats.bschoolAndroid.tests.EventPageTest@5143c662]" started-at="2023-12-06T10:54:27 IST" name="tearDown" finished-at="2023-12-06T10:54:27 IST" duration-ms="211" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="logintoApp()[pri:0, instance:com.bschool.chats.bschoolAndroid.tests.EventPageTest@5143c662]" started-at="2023-12-06T10:54:27 IST" name="logintoApp" finished-at="2023-12-06T10:54:37 IST" duration-ms="9632" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logintoApp -->
+        <test-method retried="true" signature="eventPage_editEvent()[pri:0, instance:com.bschool.chats.bschoolAndroid.tests.EventPageTest@5143c662]" started-at="2023-12-06T10:54:37 IST" name="eventPage_editEvent" finished-at="2023-12-06T10:54:48 IST" duration-ms="11740" status="SKIP">
+          <exception class="org.openqa.selenium.StaleElementReferenceException">
             <message>
-              <![CDATA[An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+              <![CDATA[The element 'By.xpath: //android.widget.ImageView[@resource-id="com.google.android.documentsui:id/icon_thumb"]' does not exist in DOM anymore
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
 Build info: version: '4.15.0', revision: '1d14b5521b'
-System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.1', java.version: '21.0.1'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '14.1', java.version: '17.0.9'
 Driver info: io.appium.java_client.android.AndroidDriver
-Command: [ca7b0345-59a2-4cab-acdc-a88c6d677151, findElement {using=xpath, value=//android.widget.TextView[@content-desc="SkipVideoButton"]}]
+Command: [d1e00a79-e140-4583-942d-86cf66650028, isElementDisplayed {id=00000000-0000-0046-ffff-ffff000003df}]
 Capabilities {appium:app: /Users/shalinigupta/Desktop..., appium:appPackage: com.bschool.chats, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {app: /Users/shalinigupta/Desktop..., automationName: UiAutomator2, deviceName: Pixel 7 Pro API 30, platformName: ANDROID}, appium:deviceApiLevel: 30, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone_arm64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 560, appium:deviceScreenSize: 1440x3120, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 3.5, appium:platformVersion: 11, appium:statBarHeight: 84, appium:takesScreenshot: true, appium:viewportRect: {height: 2868, left: 0, top: 84, width: 1440}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: ca7b0345-59a2-4cab-acdc-a88c6d677151]]>
+Element: [[AndroidDriver:  on ANDROID (d1e00a79-e140-4583-942d-86cf66650028)] -> xpath: //android.widget.ImageView[@resource-id="com.google.android.documentsui:id/icon_thumb"]]
+Session ID: d1e00a79-e140-4583-942d-86cf66650028]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+              <![CDATA[org.openqa.selenium.StaleElementReferenceException: The element 'By.xpath: //android.widget.ImageView[@resource-id="com.google.android.documentsui:id/icon_thumb"]' does not exist in DOM anymore
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
 Build info: version: '4.15.0', revision: '1d14b5521b'
-System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.1', java.version: '21.0.1'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '14.1', java.version: '17.0.9'
 Driver info: io.appium.java_client.android.AndroidDriver
-Command: [ca7b0345-59a2-4cab-acdc-a88c6d677151, findElement {using=xpath, value=//android.widget.TextView[@content-desc="SkipVideoButton"]}]
+Command: [d1e00a79-e140-4583-942d-86cf66650028, isElementDisplayed {id=00000000-0000-0046-ffff-ffff000003df}]
 Capabilities {appium:app: /Users/shalinigupta/Desktop..., appium:appPackage: com.bschool.chats, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {app: /Users/shalinigupta/Desktop..., automationName: UiAutomator2, deviceName: Pixel 7 Pro API 30, platformName: ANDROID}, appium:deviceApiLevel: 30, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone_arm64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 560, appium:deviceScreenSize: 1440x3120, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 3.5, appium:platformVersion: 11, appium:statBarHeight: 84, appium:takesScreenshot: true, appium:viewportRect: {height: 2868, left: 0, top: 84, width: 1440}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: ca7b0345-59a2-4cab-acdc-a88c6d677151
-at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+Element: [[AndroidDriver:  on ANDROID (d1e00a79-e140-4583-942d-86cf66650028)] -> xpath: //android.widget.ImageView[@resource-id="com.google.android.documentsui:id/icon_thumb"]]
+Session ID: d1e00a79-e140-4583-942d-86cf66650028
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:238)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:607)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
+at org.openqa.selenium.remote.RemoteWebElement.isDisplayed(RemoteWebElement.java:283)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+at jdk.proxy2/jdk.proxy2.$Proxy16.isDisplayed(Unknown Source)
+at com.bschool.chats.bschoolAndroid.pageojects.EventPage.VerifyPhotoOptionsDisplayed(EventPage.java:430)
+at com.bschool.chats.bschoolAndroid.tests.EventPageTest.eventPage_editEvent(EventPageTest.java:65)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- eventPage_editEvent -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bschool.chats.bschoolAndroid.tests.EventPageTest@5143c662]" started-at="2023-12-06T10:54:48 IST" name="tearDown" finished-at="2023-12-06T10:54:48 IST" duration-ms="192" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="logintoApp()[pri:0, instance:com.bschool.chats.bschoolAndroid.tests.EventPageTest@5143c662]" started-at="2023-12-06T10:54:48 IST" name="logintoApp" finished-at="2023-12-06T10:54:58 IST" duration-ms="9398" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logintoApp -->
+        <test-method signature="eventPage_editEvent()[pri:0, instance:com.bschool.chats.bschoolAndroid.tests.EventPageTest@5143c662]" started-at="2023-12-06T10:54:58 IST" name="eventPage_editEvent" finished-at="2023-12-06T10:55:32 IST" duration-ms="34392" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- eventPage_editEvent -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bschool.chats.bschoolAndroid.tests.EventPageTest@5143c662]" started-at="2023-12-06T10:55:32 IST" name="tearDown" finished-at="2023-12-06T10:55:33 IST" duration-ms="256" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="logintoApp()[pri:0, instance:com.bschool.chats.bschoolAndroid.tests.EventPageTest@5143c662]" started-at="2023-12-06T10:55:33 IST" name="logintoApp" finished-at="2023-12-06T10:55:42 IST" duration-ms="9530" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logintoApp -->
+        <test-method retried="true" signature="eventPage_readComments()[pri:0, instance:com.bschool.chats.bschoolAndroid.tests.EventPageTest@5143c662]" started-at="2023-12-06T10:55:42 IST" name="eventPage_readComments" finished-at="2023-12-06T10:56:19 IST" duration-ms="36935" status="SKIP">
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[An unknown server-side error occurred while processing the command. Original error: Must provide a selector when finding elements
+Build info: version: '4.15.0', revision: '1d14b5521b'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '14.1', java.version: '17.0.9'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [e923831a-0474-44f6-b48e-fa905e773b5b, findElement {using=id, value=}]
+Capabilities {appium:app: /Users/shalinigupta/Desktop..., appium:appPackage: com.bschool.chats, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {app: /Users/shalinigupta/Desktop..., automationName: UiAutomator2, deviceName: Pixel 7 Pro API 30, platformName: ANDROID}, appium:deviceApiLevel: 30, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone_arm64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 560, appium:deviceScreenSize: 1440x3120, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 3.5, appium:platformVersion: 11, appium:statBarHeight: 84, appium:takesScreenshot: true, appium:viewportRect: {height: 2868, left: 0, top: 84, width: 1440}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: e923831a-0474-44f6-b48e-fa905e773b5b]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: An unknown server-side error occurred while processing the command. Original error: Must provide a selector when finding elements
+Build info: version: '4.15.0', revision: '1d14b5521b'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '14.1', java.version: '17.0.9'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [e923831a-0474-44f6-b48e-fa905e773b5b, findElement {using=id, value=}]
+Capabilities {appium:app: /Users/shalinigupta/Desktop..., appium:appPackage: com.bschool.chats, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {app: /Users/shalinigupta/Desktop..., automationName: UiAutomator2, deviceName: Pixel 7 Pro API 30, platformName: ANDROID}, appium:deviceApiLevel: 30, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone_arm64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 560, appium:deviceScreenSize: 1440x3120, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 3.5, appium:platformVersion: 11, appium:statBarHeight: 84, appium:takesScreenshot: true, appium:viewportRect: {height: 2868, left: 0, top: 84, width: 1440}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: e923831a-0474-44f6-b48e-fa905e773b5b
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
 at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
 at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
 at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
@@ -95,30 +266,27 @@ at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.ja
 at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:238)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:607)
 at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:66)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:364)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
 at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
 at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy12.click(Unknown Source)
-at com.bschool.chats.bschoolAndroid.pageojects.LaunchPage.ClickSkip(LaunchPage.java:31)
-at com.bschool.chats.bschoolAndroid.pageojects.LaunchPage.goTo(LaunchPage.java:42)
-at com.bschool.chats.bschoolAndroid.TestComponents.BaseTest.logintoApp(BaseTest.java:86)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at jdk.proxy2/jdk.proxy2.$Proxy16.click(Unknown Source)
+at com.bschool.chats.bschoolAndroid.pageojects.EventPage.goBackToEvents(EventPage.java:391)
+at com.bschool.chats.bschoolAndroid.tests.EventPageTest.eventPage_readComments(EventPageTest.java:143)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:390)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:325)
-at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:810)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:577)
-at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:248)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:62)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
 at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
 at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
 at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
 at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 at org.testng.TestRunner.privateRun(TestRunner.java:848)
 at org.testng.TestRunner.run(TestRunner.java:621)
 at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
@@ -136,42 +304,66 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- eventPage_readComments -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bschool.chats.bschoolAndroid.tests.EventPageTest@5143c662]" started-at="2023-12-06T10:56:19 IST" name="tearDown" finished-at="2023-12-06T10:56:19 IST" duration-ms="240" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="logintoApp()[pri:0, instance:com.bschool.chats.bschoolAndroid.tests.EventPageTest@5143c662]" started-at="2023-12-06T10:56:19 IST" name="logintoApp" finished-at="2023-12-06T10:56:29 IST" duration-ms="9505" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logintoApp -->
-        <test-method signature="eventPage_addEventTest()[pri:0, instance:com.bschool.chats.bschoolAndroid.tests.EventPageTest@5af3afd9]" started-at="2023-12-06T01:21:13 IST" name="eventPage_addEventTest" finished-at="2023-12-06T01:21:13 IST" duration-ms="2" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchSessionException">
+        <test-method signature="eventPage_readComments()[pri:0, instance:com.bschool.chats.bschoolAndroid.tests.EventPageTest@5143c662]" started-at="2023-12-06T10:56:29 IST" name="eventPage_readComments" finished-at="2023-12-06T10:56:40 IST" duration-ms="10857" status="FAIL">
+          <exception class="org.openqa.selenium.StaleElementReferenceException">
             <message>
-              <![CDATA[Session ID is null. Using WebDriver after calling quit()?
+              <![CDATA[The element 'By.xpath: //android.widget.ImageView[@resource-id="com.google.android.documentsui:id/icon_thumb"]' does not exist in DOM anymore
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
 Build info: version: '4.15.0', revision: '1d14b5521b'
-System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.1', java.version: '21.0.1'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '14.1', java.version: '17.0.9'
 Driver info: io.appium.java_client.android.AndroidDriver
-Command: [null, findElement {using=xpath, value=//android.widget.TextView[@text="Events"]}]
-Capabilities {appium:app: /Users/shalinigupta/Desktop..., appium:appPackage: com.bschool.chats, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {app: /Users/shalinigupta/Desktop..., automationName: UiAutomator2, deviceName: Pixel 7 Pro API 30, platformName: ANDROID}, appium:deviceApiLevel: 30, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone_arm64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 560, appium:deviceScreenSize: 1440x3120, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 3.5, appium:platformVersion: 11, appium:statBarHeight: 84, appium:takesScreenshot: true, appium:viewportRect: {height: 2868, left: 0, top: 84, width: 1440}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}]]>
+Command: [60f61674-7d27-43fb-b818-b0eb8f08e2e4, isElementDisplayed {id=00000000-0000-0076-ffff-ffff00000613}]
+Capabilities {appium:app: /Users/shalinigupta/Desktop..., appium:appPackage: com.bschool.chats, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {app: /Users/shalinigupta/Desktop..., automationName: UiAutomator2, deviceName: Pixel 7 Pro API 30, platformName: ANDROID}, appium:deviceApiLevel: 30, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone_arm64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 560, appium:deviceScreenSize: 1440x3120, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 3.5, appium:platformVersion: 11, appium:statBarHeight: 84, appium:takesScreenshot: true, appium:viewportRect: {height: 2868, left: 0, top: 84, width: 1440}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Element: [[AndroidDriver:  on ANDROID (60f61674-7d27-43fb-b818-b0eb8f08e2e4)] -> xpath: //android.widget.ImageView[@resource-id="com.google.android.documentsui:id/icon_thumb"]]
+Session ID: 60f61674-7d27-43fb-b818-b0eb8f08e2e4]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+              <![CDATA[org.openqa.selenium.StaleElementReferenceException: The element 'By.xpath: //android.widget.ImageView[@resource-id="com.google.android.documentsui:id/icon_thumb"]' does not exist in DOM anymore
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
 Build info: version: '4.15.0', revision: '1d14b5521b'
-System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.1', java.version: '21.0.1'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '14.1', java.version: '17.0.9'
 Driver info: io.appium.java_client.android.AndroidDriver
-Command: [null, findElement {using=xpath, value=//android.widget.TextView[@text="Events"]}]
+Command: [60f61674-7d27-43fb-b818-b0eb8f08e2e4, isElementDisplayed {id=00000000-0000-0076-ffff-ffff00000613}]
 Capabilities {appium:app: /Users/shalinigupta/Desktop..., appium:appPackage: com.bschool.chats, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {app: /Users/shalinigupta/Desktop..., automationName: UiAutomator2, deviceName: Pixel 7 Pro API 30, platformName: ANDROID}, appium:deviceApiLevel: 30, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone_arm64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 560, appium:deviceScreenSize: 1440x3120, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 3.5, appium:platformVersion: 11, appium:statBarHeight: 84, appium:takesScreenshot: true, appium:viewportRect: {height: 2868, left: 0, top: 84, width: 1440}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:152)
+Element: [[AndroidDriver:  on ANDROID (60f61674-7d27-43fb-b818-b0eb8f08e2e4)] -> xpath: //android.widget.ImageView[@resource-id="com.google.android.documentsui:id/icon_thumb"]]
+Session ID: 60f61674-7d27-43fb-b818-b0eb8f08e2e4
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
 at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:238)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:607)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:364)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:358)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy12.click(Unknown Source)
-at com.bschool.chats.bschoolAndroid.AbstractComponents.AbstractComponents.clickEvents(AbstractComponents.java:136)
-at com.bschool.chats.bschoolAndroid.pageojects.HomePage.goToEventPage(HomePage.java:33)
-at com.bschool.chats.bschoolAndroid.tests.EventPageTest.eventPage_addEventTest(EventPageTest.java:36)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
+at org.openqa.selenium.remote.RemoteWebElement.isDisplayed(RemoteWebElement.java:283)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+at jdk.proxy2/jdk.proxy2.$Proxy16.isDisplayed(Unknown Source)
+at com.bschool.chats.bschoolAndroid.pageojects.EventPage.VerifyPhotoOptionsDisplayed(EventPage.java:430)
+at com.bschool.chats.bschoolAndroid.tests.EventPageTest.eventPage_readComments(EventPageTest.java:128)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
 at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
 at org.testng.internal.invokers.TestInvoker.retryFailed(TestInvoker.java:248)
@@ -180,7 +372,7 @@ at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInv
 at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
 at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
 at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 at org.testng.TestRunner.privateRun(TestRunner.java:848)
 at org.testng.TestRunner.run(TestRunner.java:621)
 at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
@@ -198,15 +390,43 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
+          </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- eventPage_addEventTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bschool.chats.bschoolAndroid.tests.EventPageTest@5af3afd9]" started-at="2023-12-06T01:21:13 IST" name="tearDown" finished-at="2023-12-06T01:21:13 IST" duration-ms="107" status="PASS">
+        </test-method> <!-- eventPage_readComments -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bschool.chats.bschoolAndroid.tests.EventPageTest@5143c662]" started-at="2023-12-06T10:56:40 IST" name="tearDown" finished-at="2023-12-06T10:56:40 IST" duration-ms="142" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="logintoApp()[pri:0, instance:com.bschool.chats.bschoolAndroid.tests.EventPageTest@5143c662]" started-at="2023-12-06T10:56:40 IST" name="logintoApp" finished-at="2023-12-06T10:56:50 IST" duration-ms="10289" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logintoApp -->
+        <test-method signature="eventPage_readDetails()[pri:0, instance:com.bschool.chats.bschoolAndroid.tests.EventPageTest@5143c662]" started-at="2023-12-06T10:56:50 IST" name="eventPage_readDetails" finished-at="2023-12-06T10:57:23 IST" duration-ms="32401" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- eventPage_readDetails -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bschool.chats.bschoolAndroid.tests.EventPageTest@5143c662]" started-at="2023-12-06T10:57:23 IST" name="tearDown" finished-at="2023-12-06T10:57:23 IST" duration-ms="224" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="logintoApp()[pri:0, instance:com.bschool.chats.bschoolAndroid.tests.EventPageTest@5143c662]" started-at="2023-12-06T10:57:23 IST" name="logintoApp" finished-at="2023-12-06T10:57:33 IST" duration-ms="10102" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logintoApp -->
+        <test-method signature="eventPage_writeComments()[pri:0, instance:com.bschool.chats.bschoolAndroid.tests.EventPageTest@5143c662]" started-at="2023-12-06T10:57:33 IST" name="eventPage_writeComments" finished-at="2023-12-06T10:58:10 IST" duration-ms="36311" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- eventPage_writeComments -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.bschool.chats.bschoolAndroid.tests.EventPageTest@5143c662]" started-at="2023-12-06T10:58:10 IST" name="tearDown" finished-at="2023-12-06T10:58:10 IST" duration-ms="364" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="sendReports()[pri:0, instance:com.bschool.chats.bschoolAndroid.tests.EventPageTest@5143c662]" started-at="2023-12-06T10:58:16 IST" name="sendReports" finished-at="2023-12-06T10:58:20 IST" duration-ms="4848" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sendReports -->
       </class> <!-- com.bschool.chats.bschoolAndroid.tests.EventPageTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

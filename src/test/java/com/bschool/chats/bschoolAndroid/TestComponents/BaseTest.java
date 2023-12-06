@@ -1,22 +1,14 @@
 package com.bschool.chats.bschoolAndroid.TestComponents;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Properties;
-import java.util.zip.ZipEntry;
-import java.util.zip.ZipOutputStream;
-
 import javax.mail.MessagingException;
-import javax.activation.DataHandler;
-import javax.activation.DataSource;
-import javax.activation.FileDataSource;
-import javax.mail.BodyPart;
+import javax.mail.Authenticator;
 import javax.mail.Message;
-import javax.mail.Multipart;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import javax.mail.Transport;
@@ -31,6 +23,8 @@ import io.appium.java_client.android.AndroidDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
+import org.zeroturnaround.zip.ZipUtil;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -129,7 +123,98 @@ public class BaseTest {
 		return keyValue;
 	}
 	
+	@BeforeSuite(alwaysRun=true)
+	public void beforeRunningTest() {
+		try {
+			String folderPath = System.getProperty("user.dir")+"/reports";
+			String zippedFilePath = System.getProperty("user.dir")+"/reports.zip";
+            FileUtils.forceDelete(new File(zippedFilePath)); //delete directory
+            FileUtils.forceDelete(new File(folderPath));
+            FileUtils.forceMkdir(new File(folderPath)); //create directory
+        } catch (IOException e) {
+            e.printStackTrace();
+        } 
+    }
 	
+	
+	
+	@AfterSuite(alwaysRun=true)
+	public void sendReports() {
+		sendEmail("Test message","Test subject", "2011guptashalini@gmail.com","sgka6475@gmail.com", "qsss oijz iraw ktdx");
+	}
+	
+	
+	public static void sendEmail(String message, String subject, String to, String from, String password) {
+		
+		//Variable for gmail host
+		String host = "smtp.gmail.com";
+		
+		Properties properties = System.getProperties();
+		
+		//Host set
+		properties.put("mail.smtp.host", host);
+		properties.put("mail.smtp.port", "465");
+		properties.put("mail.smtp.ssl.enable", "true");
+		properties.put("mail.smtp.auth", "true");
+		
+		//Get the session object
+		Session session = Session.getInstance(properties, new Authenticator() {
+
+			@Override
+			protected PasswordAuthentication getPasswordAuthentication() {
+				// TODO Auto-generated method stub
+				return new PasswordAuthentication(from, password);
+			}
+		
+			
+		
+	});
+		
+		//Compose message
+		MimeMessage msg = new MimeMessage(session);
+		
+		try {
+			msg.setFrom(from);
+			msg.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
+			msg.setSubject(subject);
+			// msg.setText(message); - sending text message
+			String folderPath = System.getProperty("user.dir")+"/reports";
+			String zippedFilePath = System.getProperty("user.dir")+"/reports.zip";
+			ZipUtil.pack(new File(folderPath), new File(zippedFilePath)); 
+			
+			MimeMultipart mimeMultipart = new MimeMultipart();
+			MimeBodyPart textMime = new MimeBodyPart();
+			MimeBodyPart fileMime = new MimeBodyPart();
+			
+			
+			try {
+				textMime.setText(message);
+				File reports = new File(zippedFilePath);
+				fileMime.attachFile(reports);
+				mimeMultipart.addBodyPart(textMime);
+				mimeMultipart.addBodyPart(fileMime);
+				
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			//Send the message using transport
+			msg.setContent(mimeMultipart);
+			Transport.send(msg);
+			System.out.println("Email sent");
+		} catch (MessagingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+}
+	// adding recipients
+	
+	
+	
+
+
+
 	@AfterMethod(alwaysRun=true)
 	public void tearDown() {
 		

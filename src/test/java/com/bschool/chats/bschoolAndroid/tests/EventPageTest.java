@@ -144,10 +144,7 @@ public class EventPageTest extends BaseTest {
 		eventPage.openAddedEvent();
 		match = eventPage.readCommentIsDisplayed();
 		Assert.assertTrue(match, "Event comment is displayed");
-		
-	
-	
-		
+				
 	}
 	
 	@Test(groups= {"Regression"}, retryAnalyzer=Retry.class)

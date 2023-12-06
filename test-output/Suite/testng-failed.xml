@@ -12,9 +12,9 @@
           <include name="logintoApp"/>
           <include name="tearDown"/>
           <include name="eventPage_editEvent"/>
-          <include name="eventPage_readDetails"/>
           <include name="sendReports"/>
-          <include name="eventPage_displayedTest"/>
+          <include name="beforeRunningTest"/>
+          <include name="eventPage_readComments"/>
         </methods>
       </class> <!-- com.bschool.chats.bschoolAndroid.tests.EventPageTest -->
     </classes>
