@@ -5,6 +5,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Properties;
 import javax.mail.MessagingException;
 import javax.mail.Authenticator;
@@ -12,6 +14,7 @@ import javax.mail.Message;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
 import javax.mail.Transport;
+import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
@@ -139,12 +142,14 @@ public class BaseTest {
 	
 	
 	@AfterSuite(alwaysRun=true)
-	public void sendReports() {
-		sendEmail("Test message","Test subject", "2011guptashalini@gmail.com","sgka6475@gmail.com", "qsss oijz iraw ktdx");
+	public void sendReports() throws AddressException {
+		InternetAddress[] toEmails = {new InternetAddress("2011guptashalini@gmail.com"),new InternetAddress("shalinigupta2006@gmail.com")};
+		//String to[]= {"2011guptashalini@gmail.com", "shalinigupta2006@gmail.com"};
+		sendEmail("Test message","Test subject", toEmails,"sgka6475@gmail.com", "qsss oijz iraw ktdx");
 	}
 	
 	
-	public static void sendEmail(String message, String subject, String to, String from, String password) {
+	public static void sendEmail(String message, String subject, InternetAddress[] toEmails, String from, String password) {
 		
 		//Variable for gmail host
 		String host = "smtp.gmail.com";
@@ -175,7 +180,8 @@ public class BaseTest {
 		
 		try {
 			msg.setFrom(from);
-			msg.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
+			
+			msg.addRecipients(Message.RecipientType.TO, toEmails);
 			msg.setSubject(subject);
 			// msg.setText(message); - sending text message
 			String folderPath = System.getProperty("user.dir")+"/reports";

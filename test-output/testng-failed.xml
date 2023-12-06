@@ -8,10 +8,8 @@
     <classes>
       <class name="com.bschool.chats.bschoolAndroid.tests.EventPageTest">
         <methods>
-          <include name="eventPage_addEventTest"/>
           <include name="logintoApp"/>
           <include name="tearDown"/>
-          <include name="eventPage_editEvent"/>
           <include name="sendReports"/>
           <include name="beforeRunningTest"/>
           <include name="eventPage_readComments"/>
