@@ -16,6 +16,12 @@ For Browserstack and Lamda test you need to gain your username, password and nee
 
 For running in local environments, You need to install android studio, appium server, appium inspector and need to set JAVA_HOME, ANDROID_HOME paths.
 
+## Features
+1. Retrying failed scenarios if you are putting retries for each test.
+2. Emailing of reports
+3. Screenshot of failed scenarios
+4. Various profiles, like regression, smoke etc. which can be run from command line using "mvn test -PRegression"
+
 ## Tips for running test on BS and LT:
 1. Check which Java appium client they are currently supporting and change your pom.xml accordingly. It is better to know the platform and dependecies in beginning so that you can start your code keeping that appium version in mind.
 
