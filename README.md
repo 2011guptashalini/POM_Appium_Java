@@ -15,6 +15,7 @@ Tests are holding all the test. Test components folder is having "BaseTest" file
 For Browserstack and Lamda test you need to gain your username, password and need to upload your apk file on the platform. Need to paste this information in BaseTest files. And you can start running your test on these platforms.
 
 For running in local environments, You need to install android studio, appium server, appium inspector and need to set JAVA_HOME, ANDROID_HOME paths.
+Have a look on this video: <a href="https://youtu.be/TcaSsKeW6uQ" target="_bank">YouTube</a>  
 
 ## Features
 1. Retrying failed scenarios if you are putting retries for each test.
