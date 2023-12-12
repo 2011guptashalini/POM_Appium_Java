@@ -54,8 +54,8 @@ public class BaseTestBS {
 	{
 	
 		        
-		  String userName = "shyamgupta_sgKcIp";
-	      String accessKey = "EgLEv4T1SqVhFEP3EWsT";
+		  String userName = "shyamgupta_sgKcIp"; //Change with your username
+	      String accessKey = "EgLEv4T1SqVhFEP3EWsT"; // Change with your accesskey
 	    
 	
 	      
@@ -64,7 +64,7 @@ public class BaseTestBS {
 	      capabilities.setCapability("os_version", "13.0");
 	      capabilities.setCapability("interactiveDebugging", true);
 	      capabilities.setCapability("deviceName", "Google Pixel 7 Pro");
-	      capabilities.setCapability("app", "bs://2cd679bbfb73f7e751db3bb48dbc2a55555d6713");
+	      capabilities.setCapability("app", "bs://2cd679bbfb73f7e751db3bb48dbc2a55555d6713"); //Chnage with your apk url
 	      capabilities.setCapability("project", "bschool");
 	      capabilities.setCapability("build", "debug");
 	      capabilities.setCapability("name", "bSchool");

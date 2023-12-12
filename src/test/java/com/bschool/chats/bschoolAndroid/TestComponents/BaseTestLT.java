@@ -41,7 +41,7 @@ public class BaseTestLT {
 	public static AndroidDriver driver;
 	public static AndroidDriver driver1;
 
-    public static String userName = System.getenv("LT_USERNAME") == null ? "milestuck95" // Add username here
+    public static String userName = System.getenv("LT_USERNAME") == null ? "ilestuck" // Add username here
             : System.getenv("LT_USERNAME");
     public static String accessKey = System.getenv("LT_ACCESS_KEY") == null ? "Sqd8lYkALMXgDM1JUMLkrwZO1G13oT9n61SkuD9hjWbgqX31ni" // Add accessKey here
             : System.getenv("LT_ACCESS_KEY");
