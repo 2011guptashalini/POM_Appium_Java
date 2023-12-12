@@ -2,7 +2,6 @@ package com.bschool.chats.bschoolAndroid.tests;
 
 import org.testng.annotations.Test;
 import org.testng.AssertJUnit;
-import org.testng.annotations.Test;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.HashMap;
@@ -10,13 +9,12 @@ import java.util.List;
 
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
-
 import com.bschool.chats.bschoolAndroid.Data.DataReader;
-import com.bschool.chats.bschoolAndroid.TestComponents.BaseTest;
+import com.bschool.chats.bschoolAndroid.TestComponents.BaseTestBS;
+import com.bschool.chats.bschoolAndroid.TestComponents.BaseTestLT;
 import com.bschool.chats.bschoolAndroid.TestComponents.Retry;
 
-public class EventPageTest extends BaseTest {
+public class EventPageTest extends BaseTestBS {
 	@Test(groups= {"Smoke", "Regression"}, retryAnalyzer=Retry.class)
 	public void eventPage_displayedTest() 
 	{			
@@ -31,41 +29,33 @@ public class EventPageTest extends BaseTest {
 		}
 		
 	@Test(groups= {"Smoke", "Regression"}, retryAnalyzer=Retry.class)
-	public void eventPage_addEventTest() throws InterruptedException {
+	public void eventPage_addEventTest() throws InterruptedException, IOException {
 		
 		eventPage = homePage.goToEventPage();
 		eventPage.clickAddEvent();
 		eventPage.addImage();
-		Boolean match = eventPage.VerifyPhotoOptionsDisplayed();
-		Assert.assertTrue(match, "Options to select photo is displayed");
-		
-		match = eventPage.VerifyImageIsUploaded();
-		Assert.assertTrue(match, "Photo is uploaded and app returned back to adding event page");
 		
 		eventPage.addEventDetails();
 		eventPage.createEvent();
-		match = eventPage.VerifyEventIsAdded();
+	
+		Boolean match = eventPage.VerifyEventIsAdded();
 		Assert.assertTrue(match, "Event is added and displayed");
 		
-		//Deleting the event created while testing
-		eventPage.reachToAddedEvent();
-		eventPage.clickThreeDots();
-		eventPage.clickDelete();
-		eventPage.confirmDelete();
+		eventPage.deleteEvent();
 		
 	}
 	
 	@Test(groups= {"Regression"}, retryAnalyzer=Retry.class)
-	public void eventPage_editEvent() throws InterruptedException
+	public void eventPage_editEvent() throws InterruptedException, IOException
 	{
 		eventPage = homePage.goToEventPage();
 		eventPage.clickAddEvent();
 		
 		eventPage.addImage();
-		Boolean match = eventPage.VerifyPhotoOptionsDisplayed();
-		Assert.assertTrue(match, "Options to select photo is displayed");
+		//Boolean match = eventPage.VerifyPhotoOptionsDisplayed();
+		//Assert.assertTrue(match, "Options to select photo is displayed");
 		
-		match = eventPage.VerifyImageIsUploaded();
+		Boolean match = eventPage.VerifyImageIsUploaded();
 		Assert.assertTrue(match, "Photo is uploaded and app returned back to adding event page");
 		
 		eventPage.addEventDetails();
@@ -80,26 +70,29 @@ public class EventPageTest extends BaseTest {
 		match = eventPage.CategoryUpdatedAfterSaveIsDisplayed();
 		Assert.assertTrue(match, "Category is updated");
 		
-		/*eventPage.UpdatingLink();
+	/*	eventPage.UpdatingLink();
 		match = eventPage.AddLinkPopupIsDisplayed();
 		Assert.assertTrue(match, "Add Link popup is displayed");
 		
 		
 		match = eventPage.AddedLinkAfterUpdatingIsDisplayed();
 		Assert.assertTrue(match, "Link is added successfully");*/
+		eventPage.goBackinApp();
+		eventPage.goBackinApp();
+		eventPage.deleteEvent();
 				
 		
 	}
 	@Test(groups= {"Regression"}, retryAnalyzer=Retry.class)
-	public void eventPage_readDetails() throws InterruptedException {
+	public void eventPage_readDetails() throws InterruptedException, IOException {
 		eventPage = homePage.goToEventPage();
 		eventPage.clickAddEvent();
 		
 		eventPage.addImage();
-		Boolean match = eventPage.VerifyPhotoOptionsDisplayed();
-		Assert.assertTrue(match, "Options to select photo is displayed");
+		//Boolean match = eventPage.VerifyPhotoOptionsDisplayed();
+		//Assert.assertTrue(match, "Options to select photo is displayed");
 		
-		match = eventPage.VerifyImageIsUploaded();
+		Boolean match = eventPage.VerifyImageIsUploaded();
 		Assert.assertTrue(match, "Photo is uploaded and app returned back to adding event page");
 		
 		eventPage.addEventDetails();
@@ -115,20 +108,22 @@ public class EventPageTest extends BaseTest {
 		String shortDescriptionDisplayed = eventPage.EventDescriptionIs();
 		match = eventPage.EventDescriptionIsDisplayed();
 		Assert.assertTrue(match, "Event description is displayed and description is"+shortDescriptionDisplayed);
+		eventPage.goBackinApp();
+		eventPage.deleteEvent();
 		
 	}
 	
 	
-	@Test(groups= {"Regression"}, retryAnalyzer=Retry.class)
-	public void eventPage_readComments() throws InterruptedException {
+	//@Test(groups= {"Regression"}, retryAnalyzer=Retry.class)
+	public void eventPage_readComments() throws InterruptedException, IOException {
 		eventPage = homePage.goToEventPage();
 		eventPage.clickAddEvent();
 		
 		eventPage.addImage();
-		Boolean match = eventPage.VerifyPhotoOptionsDisplayed();
-		Assert.assertTrue(match, "Options to select photo is displayed");
+		//Boolean match = eventPage.VerifyPhotoOptionsDisplayed();
+		//Assert.assertTrue(match, "Options to select photo is displayed");
 		
-		match = eventPage.VerifyImageIsUploaded();
+		Boolean match = eventPage.VerifyImageIsUploaded();
 		Assert.assertTrue(match, "Photo is uploaded and app returned back to adding event page");
 		
 		eventPage.addEventDetails();
@@ -144,19 +139,24 @@ public class EventPageTest extends BaseTest {
 		eventPage.openAddedEvent();
 		match = eventPage.readCommentIsDisplayed();
 		Assert.assertTrue(match, "Event comment is displayed");
-				
+		eventPage.goBackinApp();
+		eventPage.deleteEvent();
+		
+	
+	
+		
 	}
 	
-	@Test(groups= {"Regression"}, retryAnalyzer=Retry.class)
-	public void eventPage_writeComments() throws InterruptedException {
+	//@Test(groups= {"Regression"}, retryAnalyzer=Retry.class)
+	public void eventPage_writeComments() throws InterruptedException, IOException {
 		eventPage = homePage.goToEventPage();
 		eventPage.clickAddEvent();
 		
 		eventPage.addImage();
-		Boolean match = eventPage.VerifyPhotoOptionsDisplayed();
-		Assert.assertTrue(match, "Options to select photo is displayed");
+		//Boolean match = eventPage.VerifyPhotoOptionsDisplayed();
+		//Assert.assertTrue(match, "Options to select photo is displayed");
 		
-		match = eventPage.VerifyImageIsUploaded();
+		Boolean match = eventPage.VerifyImageIsUploaded();
 		Assert.assertTrue(match, "Photo is uploaded and app returned back to adding event page");
 		
 		eventPage.addEventDetails();

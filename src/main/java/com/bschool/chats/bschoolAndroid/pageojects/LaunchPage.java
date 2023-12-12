@@ -1,5 +1,7 @@
 package com.bschool.chats.bschoolAndroid.pageojects;
 
+import java.util.List;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -25,10 +27,21 @@ public class LaunchPage extends AbstractComponents {
 	@FindBy(xpath="//android.widget.TextView[@text=\"Login\"]")
 	WebElement login;
 	
+	//Allow button
+	@FindBy(id="com.android.permissioncontroller:id/permission_allow_button")
+	List<WebElement> allowButton;
+	
 
 	
 	public void ClickSkip() {
-		skip.click();
+		
+		if (allowButton.size() > 0)
+		{
+			allowButton.get(0).click();
+			skip.click();
+		}
+		else
+			skip.click();
 	}
 	
 	public void ClickLoginLink() {

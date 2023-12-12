@@ -24,6 +24,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+
 import com.google.common.collect.ImmutableList;
 
 
@@ -83,8 +84,23 @@ public class AbstractComponents {
 		
 	}
 	
+// For appium java client 8+ (Browser stack)
+	/* public void swipeUpDate() {
+		Duration SCROLL_DUR = Duration.ofMillis(300);
+		int startX = scrollView.getLocation().getX() + scrollView.getSize().getWidth() / 2;
+		int startY = scrollView.getLocation().getY() + scrollView.getSize().getHeight() * 3 / 4;
+        int endY = scrollView.getLocation().getY() + scrollView.getSize().getHeight() / 4;
+        
+        swipe(new Point(startX, startY), new Point(startX, endY), SCROLL_DUR );
+        //waitForAWhile(30);
+        //selectedDay.click();
+        
+		
+		
+	}*/
 	
 	
+// for appium java client version 8+ <9	
 	public void swipe(Point start, Point end, Duration duration) {
 		PointerInput input = new PointerInput(PointerInput.Kind.TOUCH, "finger1");
         Sequence swipe = new Sequence(input, 0);
@@ -96,7 +112,20 @@ public class AbstractComponents {
 		
 	}
 	
+// For appium java client version 7.6
+/*	public void swipe(Point start, Point end, Duration duration) {
+	TouchAction<?> touchAction = new TouchAction<>(driver);
+    touchAction.press(PointOption.point(startX, startY))
+            .moveTo(PointOption.point(startX, endY))
+            .release()
+            .perform();
+	}*/
 	
+
+	
+	
+	
+	//For Appium 2.0 gesture plugin appium java client 9.0
 	public void swipeUpDate() throws InterruptedException
 	{
 		RemoteWebElement scrollView = (RemoteWebElement)driver.findElement(AppiumBy.accessibilityId("Select Day"));

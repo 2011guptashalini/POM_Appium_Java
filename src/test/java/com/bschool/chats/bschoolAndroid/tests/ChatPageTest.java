@@ -13,10 +13,10 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.bschool.chats.bschoolAndroid.Data.DataReader;
-import com.bschool.chats.bschoolAndroid.TestComponents.BaseTest;
+import com.bschool.chats.bschoolAndroid.TestComponents.BaseTestLT;
 import com.bschool.chats.bschoolAndroid.TestComponents.Retry;
 
-public class ChatPageTest extends BaseTest {
+public class ChatPageTest extends BaseTestLT {
 	@Test(groups= {"Smoke", "Regression"}, retryAnalyzer=Retry.class)
 	public void chatPage_displayedTest() 
 	{			

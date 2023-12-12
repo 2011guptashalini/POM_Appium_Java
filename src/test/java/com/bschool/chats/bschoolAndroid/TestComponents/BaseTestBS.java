@@ -1,3 +1,6 @@
+// For running tests on lamda test, need to change username, password and app url. 
+// To get that run on the environment, we also need to check the supported Java appium client version. Presently
+// LT is working on appium client 7.6
 package com.bschool.chats.bschoolAndroid.TestComponents;
 
 import java.io.File;
@@ -5,8 +8,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.Arrays;
-import java.util.List;
+import java.net.URL;
 import java.util.Properties;
 import javax.mail.MessagingException;
 import javax.mail.Authenticator;
@@ -35,7 +37,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import com.bschool.chats.bschoolAndroid.pageojects.*;
 
-public class BaseTest {
+public class BaseTestBS {
 	
 	public static AndroidDriver driver;
 	public static AndroidDriver driver1;
@@ -47,44 +49,56 @@ public class BaseTest {
 	public HomePage homePage;
 	public EventPage eventPage;
 	public ChatPage chatPage;
-	
-	public AndroidDriver initializeDriver(String deviceName) throws URISyntaxException, IOException
+
+    public AndroidDriver initializeDriver() throws URISyntaxException, IOException
 	{
-		//When testing needs to be performed on mobile app, some capabilities will change.
-		
-		//Path to apk file
+	
 		        
-				String apkPath = System.getProperty("user.dir")+"/app-debug.apk";	
-				DesiredCapabilities cap = new DesiredCapabilities();
-				cap.setCapability("deviceName", deviceName);
-				cap.setCapability("platformName", "Android"); 
-				cap.setCapability("appium:automationName", "UiAutomator2"); 
-				cap.setCapability("app", apkPath);
-				
-				driver = new AndroidDriver(new URI("http://127.0.0.1:4723/").toURL(), cap);
-						
-				// Specify the path of the photo you want to send
-				String photoPath = System.getProperty("user.dir")+"//testphoto.jpeg";
-				File photo = new File(photoPath);
-		        
-		        // Push the photo file to the device
-		        driver.pushFile("/sdcard/DCIM/Camera/photo.jpg", photo);
-				return driver;
+		  String userName = "shyamgupta_sgKcIp";
+	      String accessKey = "EgLEv4T1SqVhFEP3EWsT";
+	    
+	
+	      
+	      DesiredCapabilities capabilities = new DesiredCapabilities();
+	      //capabilities.setCapability("autoGrantPermissions", true);
+	      capabilities.setCapability("os_version", "13.0");
+	      capabilities.setCapability("interactiveDebugging", true);
+	      capabilities.setCapability("deviceName", "Google Pixel 7 Pro");
+	      capabilities.setCapability("app", "bs://2cd679bbfb73f7e751db3bb48dbc2a55555d6713");
+	      capabilities.setCapability("project", "bschool");
+	      capabilities.setCapability("build", "debug");
+	      capabilities.setCapability("name", "bSchool");
+	      capabilities.setCapability("browserstack.appium_version", "1.22.0");
+
+
+	      URL url = new URL("https://"+userName+":"+accessKey+"@hub-cloud.browserstack.com/wd/hub");
+	
+	      driver = new AndroidDriver(url, capabilities);
+	              
+   
+ 
+		// Specify the path of the photo you want to send
+		//String photoPath = System.getProperty("user.dir")+"//testphoto.jpeg";
+		//File photo = new File(photoPath);
+        
+        // Push the photo file to the device
+        //driver.pushFile("/sdcard/Pictures/photo.jpg", photo);
+		return driver;
 	}
 	
-	
+
 	@BeforeMethod(alwaysRun=true)
 	public HomePage logintoApp() throws URISyntaxException, IOException
 	{
 		//String deviceName = "Pixel 7 Pro API 30";
-		String dName = getProp("device_name");
-		initializeDriver(dName);
+		//String dName = getProp("device_name");
+		initializeDriver();
 		launchPage = new LaunchPage(driver);
 		launchPage.goTo();
 		loginPage = new LoginPage(driver);
 		loginPage.loginApplication(getProp("schoolemail"), getProp("password"));
 		homePage = new HomePage(driver);
-		//loginPage.loginApplication("test", "test");
+		
 		return homePage;
 		
 		
@@ -93,8 +107,8 @@ public class BaseTest {
 	public HomePage logintoSecondDevice() throws URISyntaxException, IOException
 	{
 		//String deviceName = null;
-		String dName = getProp("second_device_name");
-		initializeDriver(dName);
+		//String dName = getProp("second_device_name");
+		initializeDriver();
 		
 		launchPage = new LaunchPage(driver);
 		launchPage.goTo();
@@ -214,12 +228,6 @@ public class BaseTest {
 		}
 
 }
-	// adding recipients
-	
-	
-	
-
-
 
 	@AfterMethod(alwaysRun=true)
 	public void tearDown() {

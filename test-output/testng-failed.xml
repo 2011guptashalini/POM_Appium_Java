@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <listeners>
-    <listener class-name="com.bschool.chats.bschoolAndroid.TestComponents.Listeners"/>
-  </listeners>
-  <test thread-count="5" name="Test(failed)">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
       <class name="com.bschool.chats.bschoolAndroid.tests.EventPageTest">
         <methods>
-          <include name="logintoApp"/>
-          <include name="tearDown"/>
           <include name="sendReports"/>
+          <include name="tearDown"/>
+          <include name="logintoApp"/>
           <include name="beforeRunningTest"/>
-          <include name="eventPage_readComments"/>
+          <include name="eventPage_displayedTest"/>
         </methods>
       </class> <!-- com.bschool.chats.bschoolAndroid.tests.EventPageTest -->
     </classes>
-  </test> <!-- Test(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

@@ -1,16 +1,21 @@
 package com.bschool.chats.bschoolAndroid.pageojects;
 
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.nativekey.KeyEvent;
 
 import com.bschool.chats.bschoolAndroid.AbstractComponents.AbstractComponents;
 
@@ -20,9 +25,9 @@ public class EventPage extends AbstractComponents {
 	AndroidDriver driver;
 	
 	//Random selecton of events
-	List<String> myEvents = Arrays.asList("Tech meet", "Happy hour", "Dreamtech", "Project Exhibition"
-			,"Gear Games","Innovatenation","Mini dirt race", "Design comptetion","Debate on some technical topic", "Techfair"
-			,"Technova", "TechToday","YoTechno","TechFest","Tfest","Quantum","Radiance","RendezvouX","Revelation","Revelatiii","Technovanza","Xenium","Xtreme","Xpressions","Zest"
+	List<String> myEvents = Arrays.asList("Technical meet", "Happiest hour", "Dreamtechno", "Project Exhibitions"
+			,"Gear Game","Innovatenations","Mini dirt races", "Design comptetions","Debate on some technical topics", "Techfairs"
+			,"Technovas", "TechTonight","YoTechnos","TechFestivals","Tfests","Quantums","Radiances","RendezvouXs","Revelations","Revelatiiis","Technovanzas","Xeniums","Xtremes","Xpression","Zests"
 );
 	Random e = new Random();
 
@@ -83,8 +88,25 @@ public class EventPage extends AbstractComponents {
 	WebElement addEvenPhotoElement;
 	
 	//Add recent photo
-	@FindBy(xpath="//android.widget.ImageView[@resource-id=\"com.google.android.documentsui:id/icon_thumb\"]")
-	WebElement addEventRecentElement;
+	//@FindBy(xpath="//android.widget.ImageView[@resource-id=\"com.google.android.documentsui:id/icon_thumb\"]")
+	//@FindBy(id="com.google.android.providers.media.module:id/icon_thumbnail")
+	//WebElement addEventRecentElement;
+	
+	//Photo click
+	@FindBy(xpath="//android.widget.TextView[@content-desc=\"Photos\"]")
+	WebElement photos;
+	
+	// Select photo
+	@FindBy(xpath="//android.view.View[@resource-id=\"com.google.android.apps.photos:id/image\"]")
+	WebElement selectPhoto;
+	
+	//cancel photo
+	@FindBy(xpath="//android.widget.ImageView[@content-desc=\"Cancel\"]")
+	WebElement cancelPhoto;
+	
+	//Back button
+	@FindBy(xpath="//android.widget.ImageButton[@content-desc=\"Navigate up\"]")
+	WebElement navigateUp;
 	
 	//Event Name Text box
 	@FindBy(xpath="//android.widget.EditText[@content-desc=\"EventName\"]")
@@ -199,9 +221,6 @@ public class EventPage extends AbstractComponents {
 	@FindBy(xpath="//android.widget.TextView[@text=\"Discussion\"]")
 	WebElement discussionTab;
 	
-	//Write comment here
-	@FindBy(xpath="//android.widget.EditText[@text=\"Write comment here…\"]")
-	WebElement commentTextBox;
 	
 	//Discussion Tab
 	@FindBy(xpath="//android.widget.TextView[@text=\"Discussion\"]")
@@ -216,7 +235,7 @@ public class EventPage extends AbstractComponents {
 	WebElement sendComment;
 	
 	//Read comment
-	@FindBy(xpath="//android.widget.TextView[@text=\"asd\"]")
+	@FindBy(xpath="//android.widget.TextView[@text=\"Nice Event\"]")
 	WebElement readComment;
 	
 	//Go back to events page 
@@ -234,6 +253,20 @@ public class EventPage extends AbstractComponents {
 	//Yes button on delete event confirmation popup
 	@FindBy(xpath="//android.widget.Button[@resource-id=\"android:id/button1\"]")
 	WebElement yesButton;
+	
+	//List view
+  	@FindBy(xpath="//android.widget.TextView[@content-desc=\"List view\"]")
+  	List<WebElement> listView;
+  	
+  	//Pick photo
+  	@FindBy(xpath="//android.widget.TextView[@resource-id=\"android:id/title\" and @text=\"s8-tweet.jpg\"]")
+  	WebElement pickPhoto;
+  	
+  	//Calendar to get focus
+  	@FindBy(xpath="//android.widget.TextView[@resource-id=\"undefined.header.title\"]")
+  	WebElement calGetFocus;
+	
+
 
 	//Methods
 	
@@ -249,13 +282,24 @@ public class EventPage extends AbstractComponents {
 		addEventElement.click();
 	}
 	
-	public void addImage() {
-		addEvenAddImageElement.click();
-		waitForAWhile(30);
-		addEventRecentElement.click();
-		
-			
-	}
+	 public void addImage() throws IOException, InterruptedException {
+	    	addEvenAddImageElement.click();
+			driver.pullFile("/sdcard/Pictures/s8-tweet.jpg");
+			//if(listView.size()>0)
+			//{
+			    listView.get(0).click();
+				waitForAWhile(30);
+				pickPhoto.click();
+		        waitForAWhile(30);
+		        
+			//}
+			//else 
+			//{
+			//	addEventRecentElement.click();
+			//	waitForAWhile(30);
+		        
+			//}
+	 }
 	
 	//Method to fill details of event
 	public void addEventDetails() throws InterruptedException {
@@ -279,6 +323,7 @@ public class EventPage extends AbstractComponents {
 		addEventEndTimeAndDateElement.click();
 		swipeUpDate(); 
 		waitForAWhile(20);
+		addEventSelectDateDoneElement.click();
 		
 		addEventShortDescriptionElement.sendKeys(shortDescription);	
 		waitForAWhile(10);
@@ -296,9 +341,13 @@ public class EventPage extends AbstractComponents {
 		addEventDenyElement.click();
 		waitForAWhile(10);
 		addEventOKElement.click();	
-		waitForAWhile(20);
-		scroll(ScrollDirection.DOWN, 1.0);
-		scroll(ScrollDirection.DOWN, 1.0);
+		waitForAWhile(40);
+		//calGetFocus.sendKeys(Keys.SHIFT);
+		scroll(ScrollDirection.DOWN, 0.8);
+		scroll(ScrollDirection.DOWN, 0.8);
+		
+		//js.executeScript("calGetFocus.focus();");
+		
 		
 	}
 	
@@ -324,6 +373,22 @@ public class EventPage extends AbstractComponents {
 		editEventEditButtonElement.click();
 					
 		
+	}
+	
+	public void goBackinApp() {
+		//driver.navigate().back();
+		driver.longPressKey(new KeyEvent(AndroidKey.BACK));
+		waitForAWhile(10);
+		
+	}
+	
+	
+	
+	public void deleteEvent() {
+		reachToAddedEvent();
+		clickThreeDots();
+		clickDelete();
+		confirmDelete();
 	}
 	
 	//Update category
@@ -425,12 +490,12 @@ public class EventPage extends AbstractComponents {
 	
 	//Assertions
 	
-	public Boolean VerifyPhotoOptionsDisplayed() {
+	//public Boolean VerifyPhotoOptionsDisplayed() {
 
-		Boolean match = addEventRecentElement.isDisplayed();
-		return match;
+	//	Boolean match = addEventRecentElement.isDisplayed();
+	//	return match;
 
-	}
+	//}
 	
 	public Boolean VerifyImageIsUploaded() {
 
@@ -459,6 +524,7 @@ public class EventPage extends AbstractComponents {
 	
 	
 	public Boolean VerifyEventIsAdded() {
+		
 		
 		WebElement addedEvent = dynamicXpathGenerator(EventName);
 		Boolean match = addedEvent.isDisplayed();

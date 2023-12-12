@@ -5,10 +5,11 @@
     <classes>
       <class name="com.bschool.chats.bschoolAndroid.tests.EventPageTest">
         <methods>
-          <include name="logintoApp"/>
-          <include name="tearDown"/>
           <include name="sendReports"/>
-          <include name="eventPage_writeComments"/>
+          <include name="tearDown"/>
+          <include name="logintoApp"/>
+          <include name="beforeRunningTest"/>
+          <include name="eventPage_displayedTest"/>
         </methods>
       </class> <!-- com.bschool.chats.bschoolAndroid.tests.EventPageTest -->
     </classes>

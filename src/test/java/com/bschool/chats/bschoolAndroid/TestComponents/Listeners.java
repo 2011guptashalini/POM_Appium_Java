@@ -13,7 +13,7 @@ import com.bschool.chats.bschoolAndroid.resources.*;
 
 import io.appium.java_client.android.AndroidDriver;
 
-public class Listeners extends BaseTest implements ITestListener{
+public class Listeners extends BaseTestLT implements ITestListener{
 	ExtentTest test;
 	ExtentReports extent = ExtentReporterNG.getReportObject();
 	ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>(); //Thread safe

@@ -12,10 +12,10 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.bschool.chats.bschoolAndroid.Data.DataReader;
-import com.bschool.chats.bschoolAndroid.TestComponents.BaseTest;
+import com.bschool.chats.bschoolAndroid.TestComponents.BaseTestLT;
 import com.bschool.chats.bschoolAndroid.TestComponents.Retry;
 
-public class HomePageTest extends BaseTest {
+public class HomePageTest extends BaseTestLT {
 	@Test(dataProvider="getData",groups= {"Smoke", "Regression"}, retryAnalyzer=Retry.class)
 	public void homePage_displayedTest(HashMap<String,String> input) throws MalformedURLException
 	{			
